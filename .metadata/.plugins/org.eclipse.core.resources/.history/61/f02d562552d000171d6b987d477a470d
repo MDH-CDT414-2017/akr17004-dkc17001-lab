@@ -1,0 +1,11 @@
+
+public class Test {
+	main
+	
+	BowlingGame bg = new BowlingGame("[n,n][n,n][n,n]");
+	
+	
+	
+	
+
+}

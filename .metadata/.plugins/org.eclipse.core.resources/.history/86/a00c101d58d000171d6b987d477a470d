@@ -1,0 +1,68 @@
+/** BowlingGame Score calculator 
+ *
+ * @author CDT414 Student: 
+ * @version 1.0 
+ * @date 2016-11-24
+ */
+public class BowlingGame {
+	
+	 String game= "[n,n][n,n]";
+	 
+	public boolean open (String a ){
+		String [] arr = a.split(",");
+		int s1 = Integer.parseInt(arr[0]);
+		int s2 = Integer.parseInt(arr[1]);
+		int result = s2 +s1;
+		if ( result < 10 ){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean strike(String a){
+		String [] arr = a.split(",");
+		int s1 = Integer.parseInt(arr[0]);
+		int s2 = Integer.parseInt(arr[1]);
+		if (s1 == 10  && s2 == 0){
+			return true;
+		}
+		return false ;
+	}
+	
+	public boolean spare (String a ){
+		String [] arr = a.split(",");
+		int s1 = Integer.parseInt(arr[0]);
+		int s2 = Integer.parseInt(arr[1]);
+		int result = s2 +s1;
+		if(result == 10 && s1<10 && s2 < 10){
+			return true;
+		}
+		return false;
+		
+	}
+	
+	
+	 
+	
+	
+	/** BowlingGame Score calculator constructor which require string as input 
+	 * @param game Expected format ""
+	 * 
+	 */	 
+	public BowlingGame(String game)
+	{	
+		this.game = game; 
+	}
+	
+	
+	/** getScore method returns a score of current Bowling game or -1 if error
+	 * 
+	 * @return Integer value of Bowling score, in case of error return value is -1 
+	 */
+	public int getScore() {
+		//TODO: calculate the score of game and return correct value
+		return(-1);
+	}
+	
+}
