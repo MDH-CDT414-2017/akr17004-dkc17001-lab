@@ -24,6 +24,20 @@ public class BowlingGameTest extends TestCase {
         assertEquals(81, bowlingGame.getScore());
     }	
 	
+	public void testStrikeOpen (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(94, bowlingGame.getScore());
+	}
+	
+	public void testMultipleStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(112, bowlingGame.getScore());
+	}
+	public void testAllStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0]");
+		assertEquals(300, bowlingGame.getScore());
+	}
+	
 
 	//TODO: Add more test cases below...
 	

@@ -20,14 +20,53 @@ public class BowlingGame {
 			String array = game.replace("]",".");
 			array = array.replace("[","");
 			String [] frames = array.split("\\.");
+		
 			if (frames.length == 10){
 				for (int i = 0; i < frames.length; i++) {
+					//open
 					if (open(frames[i])){
 						String [] arr = frames[i].split(",");
 						s1 = Integer.parseInt(arr[0]);
 						s2 = Integer.parseInt(arr[1]);
 						score = score + s2 +s1;
-					}	
+					}
+					
+					//Strike 
+					if (strike(frames[i])){
+						int br = i + 1;
+						int strikeCount = 1;
+					while(br <= 10){
+						// one strike 
+						if (open(frames[br])){
+							String [] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							if (strikeCount > 1){
+								score = score + strikeCount*10+s1;
+								score = score + 10 + s1 +s2;
+								i = br-1;
+								break;
+							}else{
+								score = score + 10 + s1 +s2;
+								break;
+							}
+						
+						}else if(strike(frames[br])){
+							strikeCount = strikeCount +1; 
+							
+							if ( strikeCount == 10){
+								score = 300;
+								return score;
+							}else{
+								br = br +1 ;
+							}
+							
+						}
+							
+						}
+					}
+					
+					
 				}
 				return score;
 			}
