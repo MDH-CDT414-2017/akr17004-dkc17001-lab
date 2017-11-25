@@ -36,7 +36,7 @@ public class BowlingGame {
 						int br = i + 1;
 						int strikeCount = 1;
 					while(br <= 10){
-						// one strike 
+						// Open after Strike 
 						if (open(frames[br])){
 							String [] arr = frames[br].split(",");
 							s1 = Integer.parseInt(arr[0]);
@@ -50,21 +50,77 @@ public class BowlingGame {
 								score = score + 10 + s1 +s2;
 								break;
 							}
-						
+							//Strike after Strike 
 						}else if(strike(frames[br])){
 							strikeCount = strikeCount +1; 
-							
+							//Perfect! 
 							if ( strikeCount == 10){
 								score = 300;
 								return score;
 							}else{
 								br = br +1 ;
 							}
-							
-						}
-							
+							// Strike next Spare
+						}else if (spare(frames[br])){
+							String [] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							if (strikeCount > 1){
+								score = score + strikeCount*10+s1;
+								score = score + 10 + s1 +s2;
+								i = br-1;
+								break;
+							}else{
+								score = score + 10 + s1 +s2;
+								break;
+							}
 						}
 					}
+				}
+				 //Spare
+				if (spare(frames[i])){
+					int br = i +1;
+					int spareCount = 1;
+					while(br <=10){
+						//Spare next Open
+						if (open(frames[br])){
+							String [] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							if (spareCount>1 ){
+								score = score + 10 +s1;
+								i = br-1;
+								break;
+							}else{
+								score = score + 10 +s1;
+							break;
+							}
+							//Spare next Spare
+						}else if(spare(frames[br])){
+							String [] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							score = score + 10 +s1;
+							br = br+1;
+							spareCount = spareCount +1;
+							//Spare next Strike
+						}else if(strike(frames[br])){
+							String [] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							if (spareCount>1 ){
+								score = score + 10 +s1;
+								i = br-1;
+								break;
+							}else{
+								score = score + 10 +s1;
+							break;
+							}
+						}
+						
+					}
+				
+				}
 					
 					
 				}
