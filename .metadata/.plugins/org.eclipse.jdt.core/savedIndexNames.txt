@@ -6,6 +6,10 @@ INDEX VERSION 1.130+/Users/djordjekalezic/Desktop/Lab1/.metadata/.plugins/org.ec
 1833648217.index
 506999199.index
 2867016645.index
+<<<<<<< HEAD
+=======
+161606450.index
+>>>>>>> Djordje
 1994344654.index
 1819685514.index
 1969767409.index
