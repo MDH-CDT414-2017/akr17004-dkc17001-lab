@@ -54,7 +54,7 @@ public class BowlingGameTest extends TestCase {
 		BowlingGame bowlingGame = new BowlingGame("[4,6][10,0][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
 		assertEquals(105, bowlingGame.getScore());
 	}
-	// Testing The Last Throw!
+	// Testing The Last Throw
 	public void testSpareLast (){
 		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,8][7]");
 		assertEquals(90, bowlingGame.getScore());
@@ -81,13 +81,6 @@ public class BowlingGameTest extends TestCase {
 		assertEquals(124, bowlingGame.getScore());
 	}
 	
-	
-	
-	
-	
-
-	//TODO: Add more test cases below...
-	
 	public void testOpen() {
         BowlingGame bowlingGame = new BowlingGame("");
         assertEquals(true, bowlingGame.open( "1,3" ));
@@ -100,9 +93,5 @@ public class BowlingGameTest extends TestCase {
         BowlingGame bowlingGame = new BowlingGame("");
         assertEquals(true, bowlingGame.spare( "8,2" ));
     }	
-	
-	
-	
-	
 	
 }
