@@ -1,0 +1,140 @@
+/** BowlingGameTest 
+ *
+ * @author CDT414 Student:
+ * @version 1.0 
+ * @date 2016-11-24
+ */
+import org.junit.Before;
+
+import junit.framework.TestCase;
+
+/** BowlingGame Score calculator test cases 
+ *  
+ */	 
+public class BowlingGameTest extends TestCase {
+        
+	/** test01 
+	 * 	
+	 *  If no game is provided, score should be -1 (error)   
+	 */	    
+
+	
+	public void testOpenScore() {
+        BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+        assertEquals(81, bowlingGame.getScore());
+    }	
+	
+	public void testStrikeOpen (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(94, bowlingGame.getScore());
+	}
+	
+	public void testMultipleStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(112, bowlingGame.getScore());
+	}
+	public void testAllStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,10]");
+		assertEquals(300, bowlingGame.getScore());
+	}
+	
+	public void testSpareOpen (){
+		BowlingGame bowlingGame = new BowlingGame("[1,9][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(88, bowlingGame.getScore());
+	}
+	public void testMultipleSpare (){
+		BowlingGame bowlingGame = new BowlingGame("[8,2][5,5][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(98, bowlingGame.getScore());
+	}
+	public void testStrikeSpare (){
+		BowlingGame bowlingGame = new BowlingGame("[10,0][4,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(103, bowlingGame.getScore());
+	}
+	public void testSpareStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[4,6][10,0][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(105, bowlingGame.getScore());
+	}
+	// Testing The Last Throw!
+	public void testSpareLast (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,8][7]");
+		assertEquals(90, bowlingGame.getScore());
+	}
+	public void testMultipleSpareLast (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,2][2,8][7]");
+		assertEquals(93, bowlingGame.getScore());
+	}
+	public void testSpareLastStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,8][10]");
+		assertEquals(93, bowlingGame.getScore());
+	}
+	
+	public void testStrikeLast (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][10,0][7,2]");
+		assertEquals(92, bowlingGame.getScore());
+	}
+	public void testMultipleStrikeLast (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][10,0][10,0][7,2]");
+		assertEquals(110, bowlingGame.getScore());
+	}
+	public void testStrikeLastStrike (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][10,0][10,0][10,10]");
+		assertEquals(124, bowlingGame.getScore());
+	}
+	
+	// Coverage Tests 
+	public void test1 (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][10,0][10,0][10,10]");
+		assertEquals(-1, bowlingGame.getScore());
+	}
+	public void test2 (){
+		BowlingGame bowlingGame = new BowlingGame("[4,6][7,3][10,0][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(113, bowlingGame.getScore());
+	}
+	public void test3 (){
+		
+			BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][7,3][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+			assertEquals(117, bowlingGame.getScore());
+		
+	}
+	// Mutation test
+	
+	public void test4 (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][2,2][10,0][10,10]");
+		assertEquals(128, bowlingGame.getScore());
+	}
+	public void test5 (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][2,2][10,0][10,10][1,2]");
+		assertEquals(-1, bowlingGame.getScore());
+	}
+	public void test6 (){
+		BowlingGame bowlingGame = new BowlingGame("");
+		assertEquals(false, bowlingGame.spare(("3,10")));
+	}
+	
+	
+	
+
+	//TODO: Add more test cases below...
+	
+	public void testOpen() {
+        BowlingGame bowlingGame = new BowlingGame("");
+        assertEquals(true, bowlingGame.open( "1,3" ));
+    }	
+	public void testStrike() {
+        BowlingGame bowlingGame = new BowlingGame("");
+        assertEquals(true, bowlingGame.strike( "10,0" ));
+    }	
+	public void testSpare() {
+        BowlingGame bowlingGame = new BowlingGame("");
+        assertEquals(true, bowlingGame.spare( "8,2" ));
+    }	
+	public void testSparef() {
+        BowlingGame bowlingGame = new BowlingGame("");
+        assertEquals(false, bowlingGame.spare( "11,1" ));
+    }
+	
+	
+	
+	
+	
+}

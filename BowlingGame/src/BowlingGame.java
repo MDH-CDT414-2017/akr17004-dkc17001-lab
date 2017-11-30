@@ -23,34 +23,44 @@ public class BowlingGame {
 		int s1 = 0;
 		int s2 = 0;
 		int score = 0;
-		int br =0;
+		
+		int strikeCount = 1;
+		int spareCount = 1;
+		 if (game == null ){
+			 return -1;
+		 }
 		if (verifyStringFormat(game) || verifyLastSpareStringFormat(game) || verifyLastStrikeStringFormat(game)){
 			
 		
 		String array = game.replace("]", ".");
 		array = array.replace("[", "");
 		String[] frames = array.split("\\.");
-	 	boolean a =  br <12 ;
+	 
 	
 			for (int i = 0; i < 10; i++) {
 				// open
 				if (open(frames[i])) {
+					if (i==9){
+						if ( frames.length == 11){
+							return -1;
+						}
+					}
+					
 					String[] arr = frames[i].split(",");
 					s1 = Integer.parseInt(arr[0]);
 					s2 = Integer.parseInt(arr[1]);
 					score = score + s2 + s1;
+					
 				}
 				// Strike
 				if (strike(frames[i])) {
-					br= i + 1;
-					int strikeCount = 1;
-				
-					
-					
-					while (a) {
-						
+					int br = i + 1;
 						if (i == 9){
+							if ( frames.length == 10 ){
+								return -1;
+							}
 							if (open(frames[br])) {
+								
 								String[] arr = frames[br].split(",");
 								s1 = Integer.parseInt(arr[0]);
 								s2 = Integer.parseInt(arr[1]);
@@ -67,6 +77,7 @@ public class BowlingGame {
 									return score;
 								}
 							
+							
 						}
 						// Open after Strike
 						if (open(frames[br])) {
@@ -77,10 +88,11 @@ public class BowlingGame {
 								score = score + strikeCount * 10 + s1;
 								score = score + 10 + s1 + s2;
 								i = br - 1;
-								break;
+								strikeCount = 1;
+								
 							} else {
 								score = score + 10 + s1 + s2;
-								break;
+								
 							}
 							// Strike after Strike
 						} else if (strike(frames[br])) {
@@ -104,8 +116,6 @@ public class BowlingGame {
 								score = score + strikeCount * 10 + s1;
 								score = score + 10 + s1 + s2;
 								return score;
-							}else{
-								br = br + 1;
 							}
 							// Strike next Spare
 						} else if (spare(frames[br])) {
@@ -116,75 +126,67 @@ public class BowlingGame {
 								score = score + strikeCount * 10 + s1;
 								score = score + 10 + s1 + s2;
 								i = br - 1;
-								break;
+								strikeCount = 1;
+								
 							} else {
 								score = score + 10 + s1 + s2;
-								break;
+							
 							}
 						}
-					
-					}
-					
-					
 					
 				}
 				// Spare
 				if (spare(frames[i])) {
-					br = i + 1;
-					int spareCount = 1;
-					
-					while (a) {
-						
+					int br =i + 1;
 						if(i == 9 ){
-							s1 = Integer.parseInt(frames[br]);
-							score = score + 10 + s1;
-							return score;
+							if ( frames.length == 10){
+								return -1;
+							}
+							    
+								if (verifyLast(frames[br])) {
+									return -1;
+							}else{
+								s1 = Integer.parseInt(frames[br]);
+								score = score + 10 + s1;
+								return score;
+							}
+							
 						}
+						
 						// Spare next Open
 						if (open(frames[br])) {
 							String[] arr = frames[br].split(",");
 							s1 = Integer.parseInt(arr[0]);
 							s2 = Integer.parseInt(arr[1]);
-							if (spareCount > 1) {
+							
 								score = score + 10 + s1;
-								i = br - 1;
-								break;
-							} else {
-								score = score + 10 + s1;
-								break;
-							}
+							
 							// Spare next Spare
 						} else if (spare(frames[br])) {
+						
 							
 							String[] arr = frames[br].split(",");
 							s1 = Integer.parseInt(arr[0]);
 							s2 = Integer.parseInt(arr[1]);
 							score = score + 10 + s1;
-							
-							spareCount = spareCount + 1;
 							if (br == 9){
 								s1 = Integer.parseInt(frames[br+1]);
 								score = score + 10 + s1;
 								return score;
 								
 							}
-							br = br + 1;
+							
 							// Spare next Strike
 						} else if (strike(frames[br])) {
 							String[] arr = frames[br].split(",");
 							s1 = Integer.parseInt(arr[0]);
 							s2 = Integer.parseInt(arr[1]);
-							if (spareCount >= 2) {
+							
 								score = score + 10 + s1;
-								i = br - 1;
-								break;
-							} else {
-								score = score + 10 + s1;
-								break;
-							}
+								
+							
 						}
 
-					}
 
 				}
 
@@ -226,17 +228,14 @@ public class BowlingGame {
 		int s1 = Integer.parseInt(arr[0]);
 		int s2 = Integer.parseInt(arr[1]);
 		int result = s2 + s1;
-		if (result == 10 ) {
-			if(s1 < 10 && s2 < 10){
-					return true;
-			}else{
-				return false;
+		if (result == 10 ){
+			if (s1 < 10 && s2 < 10){
+				return true;
 			}
-		}else{
+			return false;
+		}else{ 
 			return false;
 		}
-		
-
 
 	}
 	public boolean verifyStringFormat(String game) {
@@ -245,6 +244,9 @@ public class BowlingGame {
 	
 	public boolean verifyLastStrikeStringFormat(String game) {
 		return game.matches("(\\[([0-9]|10),([0-9]|10)\\]){10}\\[([0-9]|10),([0-9]|10)\\]");
+	}
+	public boolean verifyLast(String game){
+		return game.matches("([0-9]|10),([0-9]|10)");
 	}
 	
 	public boolean verifyLastSpareStringFormat(String game) {
