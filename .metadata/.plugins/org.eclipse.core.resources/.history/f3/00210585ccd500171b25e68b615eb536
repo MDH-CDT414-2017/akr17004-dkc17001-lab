@@ -1,4 +1,4 @@
-
+import sun.security.util.Length;
 
 /**
  * BowlingGame Score calculator
@@ -30,7 +30,7 @@ public class BowlingGame {
 		array = array.replace("[", "");
 		String[] frames = array.split("\\.");
 
-	
+		if (frames.length >= 10 || frames.length == 11) {
 			for (int i = 0; i < 10; i++) {
 				// open
 				if (open(frames[i])) {
@@ -170,7 +170,7 @@ public class BowlingGame {
 			}
 			return score;
 			
-		
+		}
 		
 		}
 			return (-1);

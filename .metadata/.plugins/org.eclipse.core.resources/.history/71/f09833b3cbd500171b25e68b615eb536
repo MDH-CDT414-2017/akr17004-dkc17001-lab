@@ -86,16 +86,6 @@ public class BowlingGameTest extends TestCase {
 		BowlingGame bowlingGame = new BowlingGame("[1,5][1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][10,0][10,0][10,10]");
 		assertEquals(-1, bowlingGame.getScore());
 	}
-	public void test2 (){
-		BowlingGame bowlingGame = new BowlingGame("[4,6][7,3][10,0][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
-		assertEquals(113, bowlingGame.getScore());
-	}
-	public void test3 (){
-		
-			BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][7,3][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
-			assertEquals(117, bowlingGame.getScore());
-		
-	}
 	
 	
 	

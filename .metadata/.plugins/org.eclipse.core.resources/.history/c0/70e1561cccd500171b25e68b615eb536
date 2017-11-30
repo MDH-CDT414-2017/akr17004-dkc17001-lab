@@ -93,7 +93,7 @@ public class BowlingGameTest extends TestCase {
 	public void test3 (){
 		
 			BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][7,3][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
-			assertEquals(117, bowlingGame.getScore());
+			assertEquals(103, bowlingGame.getScore());
 		
 	}
 	
