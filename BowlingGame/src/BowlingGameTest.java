@@ -43,8 +43,8 @@ public class BowlingGameTest extends TestCase {
 		assertEquals(88, bowlingGame.getScore());
 	}
 	public void testMultipleSpare (){
-		BowlingGame bowlingGame = new BowlingGame("[8,2][5,5][7,3][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
-		assertEquals(102, bowlingGame.getScore());
+		BowlingGame bowlingGame = new BowlingGame("[8,2][5,5][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(98, bowlingGame.getScore());
 	}
 	public void testStrikeSpare (){
 		BowlingGame bowlingGame = new BowlingGame("[10,0][4,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
@@ -96,7 +96,16 @@ public class BowlingGameTest extends TestCase {
 			assertEquals(117, bowlingGame.getScore());
 		
 	}
+	// Mutation test
 	
+	public void test4 (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][2,2][10,0][10,10]");
+		assertEquals(128, bowlingGame.getScore());
+	}
+	public void test5 (){
+		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][2,2][10,0][10,10][1,2]");
+		assertEquals(-1, bowlingGame.getScore());
+	}
 	
 	
 	
@@ -115,6 +124,10 @@ public class BowlingGameTest extends TestCase {
         BowlingGame bowlingGame = new BowlingGame("");
         assertEquals(true, bowlingGame.spare( "8,2" ));
     }	
+	public void testSparef() {
+        BowlingGame bowlingGame = new BowlingGame("");
+        assertEquals(false, bowlingGame.spare( "8,1" ));
+    }
 	
 	
 	
