@@ -149,7 +149,7 @@ public class BowlingGame {
 							else{
 								
 								if (frames[br].equals(null)){
-									return -1;
+									return -1
 								}
 								s1 = Integer.parseInt(frames[br]);
 								score = score + 10 + s1;
@@ -234,7 +234,7 @@ public class BowlingGame {
 		int s2 = Integer.parseInt(arr[1]);
 		int result = s2 + s1;
 		if (result == 10 ){
-			if ((s1 < 10 || s1 ==0) && s2 <= 10){
+			if (s1 < 10 && s2 < 10){
 				return true;
 			}
 			return false;
