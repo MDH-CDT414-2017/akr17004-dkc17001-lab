@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Djordjes-MacBook-Pro.local" name="BowlingGameTest" skipped="0" tests="17" time="5.075" timestamp="2017-11-29T17:14:35">
+<testsuite errors="0" failures="5" hostname="Djordjes-MacBook-Pro.local" name="BowlingGameTest" skipped="0" tests="86" time="5.102" timestamp="2017-12-03T07:25:34">
   <properties>
     <property name="ant.project.invoked-targets" value="all" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
@@ -51,7 +51,7 @@
     <property name="user.name" value="djordjekalezic" />
     <property name="java.class.path" value="/Users/djordjekalezic/Desktop/Lab1/build/classes:/Users/djordjekalezic/Desktop/Lab1/build/test/classes:/Users/djordjekalezic/Desktop/Lab1/BowlingGame/lib/hamcrest-core-1.3.jar:/Users/djordjekalezic/Desktop/Lab1/BowlingGame/lib/junit-4.12.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant-junit4.jar" />
     <property name="java.vm.specification.version" value="1.8" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner BowlingGameTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/djordjekalezic/Desktop/Lab1/build/test/xml/TEST-BowlingGameTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/djordjekalezic/Desktop/Lab1/junitvmwatcher8467386815225903729.properties propsfile=/Users/djordjekalezic/Desktop/Lab1/junit53203661480425091.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner BowlingGameTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/djordjekalezic/Desktop/Lab1/build/test/xml/TEST-BowlingGameTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/djordjekalezic/Desktop/Lab1/junitvmwatcher6605924671933955397.properties propsfile=/Users/djordjekalezic/Desktop/Lab1/junit1671969392338945108.properties" />
     <property name="sun.arch.data.model" value="64" />
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
@@ -71,22 +71,111 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
     <property name="sun.cpu.isalist" value="" />
   </properties>
-  <testcase classname="BowlingGameTest" name="testOpenScore" time="0.004" />
+  <testcase classname="BowlingGameTest" name="testOpenScore" time="0.003" />
   <testcase classname="BowlingGameTest" name="testSpareLastStrike" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test111" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test222" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test333" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test444" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test555" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test666" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test777" time="0.0" />
   <testcase classname="BowlingGameTest" name="testSpare" time="0.0" />
   <testcase classname="BowlingGameTest" name="testOpen" time="0.0" />
-  <testcase classname="BowlingGameTest" name="testStrikeSpare" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test10" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test11" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test12" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test13" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test14" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test15" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test16" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test17" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test18" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test19" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test20" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test21" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test22" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test23" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test24" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test25" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test26" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test27" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test28" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test29" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test30" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test31" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test32" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test33" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test34" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test35" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test36" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test37" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test38" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test39" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test40" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test41" time="0.002">
+    <failure message="expected:&lt;270&gt; but was:&lt;10&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;270&gt; but was:&lt;10&gt;
+	at BowlingGameTest.test41(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="BowlingGameTest" name="test42" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test43" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test44" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test45" time="0.001">
+    <failure message="expected:&lt;95&gt; but was:&lt;125&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;95&gt; but was:&lt;125&gt;
+	at BowlingGameTest.test45(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="BowlingGameTest" name="test46" time="0.001">
+    <failure message="expected:&lt;95&gt; but was:&lt;117&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;95&gt; but was:&lt;117&gt;
+	at BowlingGameTest.test46(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="BowlingGameTest" name="test47" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test48" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test49" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test50" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test51" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test52" time="0.0">
+    <failure message="expected:&lt;-1&gt; but was:&lt;84&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;-1&gt; but was:&lt;84&gt;
+	at BowlingGameTest.test52(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="BowlingGameTest" name="test53" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test54" time="0.001">
+    <failure message="expected:&lt;-1&gt; but was:&lt;86&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;-1&gt; but was:&lt;86&gt;
+	at BowlingGameTest.test54(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="BowlingGameTest" name="test55" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test56" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test57" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test58" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test59" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test60" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test61" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test62" time="0.0" />
+  <testcase classname="BowlingGameTest" name="testStrikeSpare" time="0.0" />
   <testcase classname="BowlingGameTest" name="testMultipleSpareLast" time="0.0" />
   <testcase classname="BowlingGameTest" name="testMultipleStrike" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test1" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test2" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test3" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test4" time="0.001" />
+  <testcase classname="BowlingGameTest" name="test5" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test6" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test7" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test8" time="0.0" />
+  <testcase classname="BowlingGameTest" name="test9" time="0.0" />
   <testcase classname="BowlingGameTest" name="testSpareLast" time="0.001" />
   <testcase classname="BowlingGameTest" name="testSpareOpen" time="0.0" />
-  <testcase classname="BowlingGameTest" name="testAllStrike" time="0.001" />
+  <testcase classname="BowlingGameTest" name="testAllStrike" time="0.0" />
   <testcase classname="BowlingGameTest" name="testStrikeLastStrike" time="0.001" />
   <testcase classname="BowlingGameTest" name="testMultipleStrikeLast" time="0.0" />
-  <testcase classname="BowlingGameTest" name="testMultipleSpare" time="0.0" />
+  <testcase classname="BowlingGameTest" name="testMultipleSpare" time="0.001" />
   <testcase classname="BowlingGameTest" name="testStrike" time="0.0" />
   <testcase classname="BowlingGameTest" name="testStrikeLast" time="0.0" />
-  <testcase classname="BowlingGameTest" name="testStrikeOpen" time="0.001" />
+  <testcase classname="BowlingGameTest" name="testStrikeOpen" time="0.0" />
   <testcase classname="BowlingGameTest" name="testSpareStrike" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
