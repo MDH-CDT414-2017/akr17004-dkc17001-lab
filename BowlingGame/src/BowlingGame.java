@@ -51,7 +51,7 @@ public class BowlingGame {
 					s2 = Integer.parseInt(arr[1]);
 					score = score + s2 + s1;
 					
-				}
+				}else
 				// Strike
 				if (strike(frames[i])) {
 					int br = i + 1;
@@ -66,6 +66,9 @@ public class BowlingGame {
 								s2 = Integer.parseInt(arr[1]);
 									score = score + 10 + s1 + s2;
 									return score;
+							
+								
+								
 							}else{
 									strikeCount = strikeCount + 1;
 							
@@ -106,6 +109,10 @@ public class BowlingGame {
 									score = 300;
 									return score;
 								}else{
+							
+									score = 260 ;
+									score = score + 10 + s1 + s2;
+									return score;
 									
 								}
 								
@@ -134,7 +141,7 @@ public class BowlingGame {
 							}
 						}
 					
-				}
+				}else
 				// Spare
 				if (spare(frames[i])) {
 					int br =i + 1;
@@ -193,7 +200,10 @@ public class BowlingGame {
 						}
 
 
+				}else{
+					return -1;
 				}
+				
 
 			}
 			return score;
@@ -211,8 +221,10 @@ public class BowlingGame {
 		int s1 = Integer.parseInt(arr[0]);
 		int s2 = Integer.parseInt(arr[1]);
 		int result = s2 + s1;
-		if (result < 10) {
+		if (result <= 9) {
+			System.out.println("Open"+s1);
 			return true;
+	
 		} else {
 			return false;
 		}
@@ -223,7 +235,9 @@ public class BowlingGame {
 		int s1 = Integer.parseInt(arr[0]);
 		int s2 = Integer.parseInt(arr[1]);
 		if (s1 == 10 && s2 == 0) {
+			System.out.println("STrike"+s1);
 			return true;
+			
 		}
 		return false;
 	}
@@ -234,7 +248,8 @@ public class BowlingGame {
 		int s2 = Integer.parseInt(arr[1]);
 		int result = s2 + s1;
 		if (result == 10 ){
-			if ((s1 < 10 || s1 ==0) && s2 <= 10){
+			if ((s1 < 10 && s2 <10 ) || (s1 ==0 && s2 <= 10)){
+				System.out.println("Spare"+s1);
 				return true;
 			}
 			return false;
