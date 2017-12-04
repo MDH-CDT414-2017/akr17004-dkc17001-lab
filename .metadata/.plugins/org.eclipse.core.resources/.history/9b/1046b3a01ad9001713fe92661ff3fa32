@@ -67,6 +67,7 @@ public class BowlingGame {
 									score = score + 10 + s1 + s2;
 									return score;
 							}else{
+								
 									String[] arr = frames[br].split(",");
 									s1 = Integer.parseInt(arr[0]);
 									s2 = Integer.parseInt(arr[1]);
@@ -245,10 +246,8 @@ public class BowlingGame {
 				return true;
 			}else if ( s1 ==0 && s2 <= 10){
 				return true;
-			}else{
-				return false;
 			}
-			
+			return false;
 		}else{ 
 			return false;
 		}

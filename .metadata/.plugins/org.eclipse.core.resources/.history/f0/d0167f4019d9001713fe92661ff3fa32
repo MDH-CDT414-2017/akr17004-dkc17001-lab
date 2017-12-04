@@ -30,8 +30,8 @@ public class BowlingGameTest extends TestCase {
 	}
 	
 	public void testMultipleStrike (){
-		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][10,0][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
-		assertEquals(109, bowlingGame.getScore());
+		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,6]");
+		assertEquals(112, bowlingGame.getScore());
 	}
 	public void testAllStrike (){
 		BowlingGame bowlingGame = new BowlingGame("[10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,0][10,10]");
@@ -100,7 +100,7 @@ public class BowlingGameTest extends TestCase {
 	
 	public void test4 (){
 		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][2,2][10,0][10,10]");
-		assertEquals(98, bowlingGame.getScore());
+		assertEquals(128, bowlingGame.getScore());
 	}
 	public void test5 (){
 		BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][2,2][10,0][10,10][1,2]");
@@ -182,7 +182,7 @@ public class BowlingGameTest extends TestCase {
 	public void test43() { BowlingGame bowlingGame = new BowlingGame("[0,10][7,10][3,6][4,4][5,3][3,3][4,5][8,1][2,6]"); assertEquals(-1, bowlingGame.getScore());}
 	public void test44() { BowlingGame bowlingGame = new BowlingGame("[5,1][6,1][7,j][3,6][4,4][5,3][3,3][4,5][8,1][2,6]"); assertEquals(-1, bowlingGame.getScore());}
 	public void test45() { BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][10,0][10,2]"); assertEquals(95, bowlingGame.getScore());}
-	public void test46() { BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][10,0][6,3]"); assertEquals(92, bowlingGame.getScore());}
+	public void test46() { BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][10,0][6,3]"); assertEquals(95, bowlingGame.getScore());}
 	public void test47() { BowlingGame bowlingGame = new BowlingGame("[1,9][1,9][1,9][1,9][1,9][1,9][1,9][1,9][1,9][1,9][10]"); assertEquals(119, bowlingGame.getScore());}
 	public void test48() { BowlingGame bowlingGame = new BowlingGame("[0,10][0,10][0,10][0,10][0,10][0,10][0,10][0,10][0,10][0,10][10]"); assertEquals(110, bowlingGame.getScore());}
 	public void test49() { BowlingGame bowlingGame = new BowlingGame("[1,5][3,6][7,2][3,6][4,4][1,5][3,6][7,2][3,6][4,4][5,3][3,3][4,5][8,1][2,8][10]"); assertEquals(-1, bowlingGame.getScore());}
