@@ -91,13 +91,13 @@ public class BowlingGame {
 								String[] arr = frames[br+1].split(",");
 								s1 = Integer.parseInt(arr[0]);
 								s2 = Integer.parseInt(arr[1]);
-								
 								if (s1 == 10 && s2==10){
 									score = 300;
 									return score;
 								}else{
-									score = 270 + s1 + s2;
+									score = 260 + 10 + s1 + s2;
 									return score;
+									
 								}
 								
 							} else if (br == 9) {
@@ -171,7 +171,15 @@ public class BowlingGame {
 							}
 							
 							// Spare next Strike
-						} 
+						} else if (strike(frames[br])) {
+							String[] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							
+								score = score + 10 + s1;
+								
+							
+						}
 
 
 				}else{
@@ -222,12 +230,17 @@ public class BowlingGame {
 		int s2 = Integer.parseInt(arr[1]);
 		int result = s2 + s1;
 		if (result == 10 ){
-			return true;
-		}else{
+			if (s1 < 10 && s2 <10 ){
+				return true;
+			}else if ( s1 ==0 && s2 <= 10){
+				return true;
+			}else{
+				return false;
+			}
+			
+		}else{ 
 			return false;
 		}
-			
-		
 
 	}
 	public boolean verifyStringFormat(String game) {

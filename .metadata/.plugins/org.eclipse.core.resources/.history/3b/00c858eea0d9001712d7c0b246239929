@@ -114,7 +114,10 @@ public class BowlingGameTest extends TestCase {
 		BowlingGame bowlingGame = new BowlingGame("");
 		assertEquals(false, bowlingGame.spare(("1,3")));
 	}
-	
+	public void spareCondition (){
+		BowlingGame bowlingGame = new BowlingGame("");
+		assertEquals(false, bowlingGame.spare(("3,9")));
+	}
 	
 	 
 

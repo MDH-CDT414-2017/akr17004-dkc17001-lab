@@ -171,7 +171,15 @@ public class BowlingGame {
 							}
 							
 							// Spare next Strike
-						} 
+						} else if (strike(frames[br])) {
+							String[] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							
+								score = score + 10 + s1;
+								
+							
+						}
 
 
 				}else{
@@ -222,11 +230,13 @@ public class BowlingGame {
 		int s2 = Integer.parseInt(arr[1]);
 		int result = s2 + s1;
 		if (result == 10 ){
-			return true;
-		}else{
-			return false;
+			if (s1 < 9 && s2 <9 ){
+				return true;
+			}else if ( s1 ==0 && s2 <= 10){
+				return true;
+			}
 		}
-			
+			return false;
 		
 
 	}

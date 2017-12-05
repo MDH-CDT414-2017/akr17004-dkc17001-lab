@@ -171,7 +171,15 @@ public class BowlingGame {
 							}
 							
 							// Spare next Strike
-						} 
+						} else if (strike(frames[br])) {
+							String[] arr = frames[br].split(",");
+							s1 = Integer.parseInt(arr[0]);
+							s2 = Integer.parseInt(arr[1]);
+							
+								score = score + 10 + s1;
+								
+							
+						}
 
 
 				}else{
